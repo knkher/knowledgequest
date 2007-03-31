@@ -71,9 +71,7 @@ LRESULT KWindow::ProcessAppMessage(HWND hWnd, UINT message, WPARAM wParam, LPARA
 
 	hWnd;message;wParam;lParam;
 	
-	if(false){
-	}
-	else if (message == m_msgIdle){
+	if (message == m_msgIdle){
 		lRes = OnIdle();
 	}
 	else if (message == m_msgPostCreate){

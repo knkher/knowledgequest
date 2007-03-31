@@ -52,7 +52,8 @@ int KApp::winMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdLine
 	}
 
 	// Main message loop:
-	MSG msg;
+	MSG msg;	
+	msg.wParam = 0;
 	bool bQuit = false;
 	while (!bQuit){
 		if(PeekMessage(&msg,NULL,0,0,PM_REMOVE)){

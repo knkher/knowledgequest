@@ -31,7 +31,7 @@ HWND KWindow::CreateKWindow(
 
 			m_hWnd = 0;
 
-			bool bFullScreenPossible = false;
+			//bool bFullScreenPossible = false;
 			{
 				DEVMODE dmScreenSettings;								// Device Mode
 				
