@@ -3,34 +3,38 @@
 
 #include "dataTypes.h"
 namespace base{
+	
+	typedef unsigned int PayloadSizeUnit;
 	class Payload
 	{
 	private:
 		void * m_pLocation;
 		
-		unsigned int m_uSize;
+		PayloadSizeUnit m_uSize;
 		
-		
-		int _deepCopy(Payload * pPayload);
-		
+		int deepCopy(void * pLocation, PayloadSizeUnit uSize);
 		
 	public:	
-		Payload(void * pLocation = 0, unsigned int uSize = 0);
+		Payload();
 		Payload(Payload & payload);
 		virtual ~Payload();
 		void clean();
 		void init();
 		
-		unsigned int getSize();
+		PayloadSizeUnit getSize();
 		void * getLocation();	
-		int deepCopy(Payload &pPayload);
+		//int deepCopy(Payload &pPayload);
+		
+		
 		bool operator==(Payload &pPayload);
-		Payload & operator= (Payload & payload);		 
+		bool isEqualTo(void * pLocation, PayloadSizeUnit uSize);
+		
+		Payload & operator= (Payload & payload);
+		Payload & makeEqualTo(void * pLocation, PayloadSizeUnit uSize);		 
 	};
 	
 }
 
 typedef base::Payload SafePointer;
-
 
 #endif /*PAYLOAD_H_*/

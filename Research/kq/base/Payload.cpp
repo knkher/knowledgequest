@@ -7,27 +7,27 @@
 using namespace base;
 
 
-Payload::Payload(void * pLocation, unsigned int uSize)
+Payload::Payload()
 {
 	init();
-	m_pLocation = pLocation;
-	m_uSize = uSize;
 }
 
 Payload::Payload(Payload & payload)
 {
-	*this = payload;	
+		
 }
 
 Payload::~Payload()
 {
+	clean();
 	if(m_pLocation && m_uSize){
-		printf("\nbase::Payload::_deepCopy::Probably Data left floating. For safety use clean() before destruction.");
+		printf("\nbase::Payload::~Payload::Warning: Data left floating.");
 	}	
 }
 
 void Payload::clean(){
 	if(m_uSize && m_pLocation){
+		printf("\nFreeing %u bytes at %p", m_uSize, m_pLocation);
 		free(m_pLocation);
 	}	
 	init();
@@ -38,7 +38,7 @@ void Payload::init(){
 	m_uSize = 0;	
 }
 
-unsigned int Payload::getSize(){
+PayloadSizeUnit Payload::getSize(){
 	return m_uSize;
 }
 void * Payload::getLocation(){
@@ -46,50 +46,66 @@ void * Payload::getLocation(){
 }
 
 
-int Payload::_deepCopy(Payload * pPayload){
-	if(m_pLocation && m_uSize){
-		printf("\nbase::Payload::_deepCopy::Probably Data left floating. For safety use clean() before deep copy operations.");
-	}	
+
+//int Payload::deepCopy(Payload & payload){
+//	if(&payload == this){
+//		return iSuccess;
+//	}
+//	return deepCopy(payload.m_pLocation, payload.m_uSize);
+//}
+
+int Payload::deepCopy(void * pLocation, PayloadSizeUnit uSize){
 	
-	m_pLocation = malloc(pPayload->m_uSize);
+//	if(m_pLocation && m_uSize){
+//		printf("\nbase::Payload::_deepCopy::Warning: Data left floating.");
+//	}
+
+	clean();
+	
+	m_pLocation = malloc(uSize);
 	if(!m_pLocation){
 		return iFailure;
 	}
-	m_uSize = pPayload->m_uSize;	
-	memcpy(m_pLocation, pPayload->m_pLocation, m_uSize);
-	
+	m_uSize = uSize;	
+	memcpy(m_pLocation, pLocation, m_uSize);	
 	return iSuccess;
-	
-}
-int Payload::deepCopy(Payload & payload){
-	if(&payload == this){
-		return iSuccess;
-	}
-	return _deepCopy(&payload);
 }
 
-bool Payload::operator==(Payload & payload){
+
+bool Payload::isEqualTo(void * pLocation, PayloadSizeUnit uSize){
+	
 	//If not of the same size then definitely not equal
-	if(m_uSize != payload.m_uSize){
+	if(m_uSize != uSize){
 		return false;
 	}
 	//Assume same size below
 	
 	//Now if same location then surely the same
-	if(m_pLocation == payload.m_pLocation){
+	if(m_pLocation == pLocation){
 		return true;
 	}
 	
-	if(memcmp(m_pLocation, payload.m_pLocation, m_uSize) == 0){
+	if(memcmp(m_pLocation, pLocation, m_uSize) == 0){
 		return true;
 	}
 	
 	return false;
+}
+
+bool Payload::operator==(Payload & payload){
 	
+	if(this == &payload){
+		return true;
+	}
+	return isEqualTo(payload.m_pLocation, payload.m_uSize);	
 }
 
 Payload & Payload::operator= (Payload & payload){
-	m_uSize = payload.m_uSize;
-	m_pLocation = payload.m_pLocation;
+	deepCopy(payload.m_pLocation, payload.m_uSize);
+	return *this;
+}
+
+Payload &  Payload::makeEqualTo (void * pLocation, PayloadSizeUnit uSize){
+	deepCopy(pLocation,uSize);
 	return *this;
 }
