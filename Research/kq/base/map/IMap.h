@@ -4,14 +4,14 @@
 #include "Value.h"
 
 
-namespace base
+namespace datastructures
 {
 	namespace map{
 		class IMap
 		{
 		public:
-			virtual bool lookup(void * pKeyData, PayloadSizeUnit ulKeySize, Value & v) = 0;					
-			virtual void setAt(void * pKeyData, PayloadSizeUnit ulKeySize, void * pValue, PayloadSizeUnit ulValueSize) = 0;
+			virtual bool lookup(void * pKeyData, PointerSizeUnit ulKeySize, Value & v) = 0;					
+			virtual void setAt(void * pKeyData, PointerSizeUnit ulKeySize, void * pValue, PointerSizeUnit ulValueSize) = 0;
 			virtual ~IMap();
 		};
 	}

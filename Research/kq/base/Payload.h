@@ -6,17 +6,17 @@
 #include "memory.h"
 #include "stdio.h"
 
-namespace base{
+namespace datastructures{
 	
-	typedef unsigned int PayloadSizeUnit;
-	class Payload
+	typedef unsigned int PointerSizeUnit;
+	class SafePointer
 	{
 	private:
 		void * m_pLocation;
 		
-		PayloadSizeUnit m_uSize;
+		PointerSizeUnit m_uSize;
 		
-		inline int deepCopy(void * pLocation, PayloadSizeUnit uSize){
+		inline int deepCopy(void * pLocation, PointerSizeUnit uSize){
 			clean();
 	
 			m_pLocation = malloc(uSize);
@@ -29,9 +29,9 @@ namespace base{
 		}
 		
 	public:	
-		Payload();
-		Payload(Payload & payload);
-		virtual ~Payload();
+		SafePointer();
+		SafePointer(SafePointer & payload);
+		virtual ~SafePointer();
 		
 		inline void clean(){
 			if(m_uSize && m_pLocation){
@@ -46,21 +46,21 @@ namespace base{
 			m_uSize = 0;	
 		}
 		
-		inline PayloadSizeUnit getSize(){
+		inline PointerSizeUnit getSize(){
 			return m_uSize;
 		}
 		inline void * getLocation(){
 			return m_pLocation;	
 		}		
 				
-		bool operator==(Payload & payload){	
+		bool operator==(SafePointer & payload){	
 			if(this == &payload){
 				return true;
 			}
 			return isEqualTo(payload.m_pLocation, payload.m_uSize);	
 		}
 		
-		inline bool isEqualTo(void * pLocation, PayloadSizeUnit uSize){
+		inline bool isEqualTo(void * pLocation, PointerSizeUnit uSize){
 			//If not of the same size then definitely not equal
 			if(m_uSize != uSize){
 				return false;
@@ -79,12 +79,11 @@ namespace base{
 			return false;
 		}
 		
-		Payload & operator= (Payload & payload);
-		Payload & makeEqualTo(void * pLocation, PayloadSizeUnit uSize);		 
+		SafePointer & operator= (SafePointer & payload);
+		SafePointer & makeEqualTo(void * pLocation, PointerSizeUnit uSize);		 
 	};
 	
 }
 
-typedef base::Payload SafePointer;
 
 #endif /*PAYLOAD_H_*/

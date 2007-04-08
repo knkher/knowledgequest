@@ -1,6 +1,6 @@
 #include "LinkedListMap.h"
 
-using namespace base::map;
+using namespace datastructures::map;
 
 LinkedListMap::LinkedListMap()
 {
@@ -20,7 +20,7 @@ LinkedListMap::~LinkedListMap()
 }
 
 
-bool LinkedListMap::lookup(void * pKeyData, PayloadSizeUnit ulKeySize, Value & v){
+bool LinkedListMap::lookup(void * pKeyData, PointerSizeUnit ulKeySize, Value & v){
 	MapEntryNode * pEntry = 0;
 	pEntry = findValue(pKeyData, ulKeySize);
 	if(!pEntry){
@@ -29,7 +29,7 @@ bool LinkedListMap::lookup(void * pKeyData, PayloadSizeUnit ulKeySize, Value & v
 	v = pEntry->v;
 	return true;
 }
-void LinkedListMap::setAt(void * pKeyData, PayloadSizeUnit ulKeySize, void * pValue, PayloadSizeUnit ulValueSize){
+void LinkedListMap::setAt(void * pKeyData, PointerSizeUnit ulKeySize, void * pValue, PointerSizeUnit ulValueSize){
 	MapEntryNode * pEntry = findValue(pKeyData,ulKeySize);	
 	if(!pEntry){
 		pEntry = new MapEntryNode();
@@ -40,7 +40,7 @@ void LinkedListMap::setAt(void * pKeyData, PayloadSizeUnit ulKeySize, void * pVa
 	pEntry->v.makeEqualTo(pValue, ulValueSize);
 }
 
-MapEntryNode * LinkedListMap::findValue(void * pKeyData,PayloadSizeUnit ulKeySize){
+MapEntryNode * LinkedListMap::findValue(void * pKeyData,PointerSizeUnit ulKeySize){
 	MapEntryNode * pEntry = m_pEntries;
 	
 	while(pEntry != 0){

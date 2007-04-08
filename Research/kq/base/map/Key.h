@@ -3,13 +3,13 @@
 
 #include "..\Payload.h"
 
-namespace base
+namespace datastructures
 {
 
 namespace map
 {
 
-class Key : public base::Payload
+class Key : public datastructures::SafePointer
 {
 	
 };

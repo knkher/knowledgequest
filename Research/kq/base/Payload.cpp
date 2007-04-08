@@ -4,21 +4,21 @@
 
 
 
-using namespace base;
+using namespace datastructures;
 
 
-Payload::Payload()
+SafePointer::SafePointer()
 {
 	init();
 }
 
-Payload::Payload(Payload & payload)
+SafePointer::SafePointer(SafePointer & payload)
 {
 	init();
 	makeEqualTo(payload.m_pLocation, payload.m_uSize);		
 }
 
-Payload::~Payload()
+SafePointer::~SafePointer()
 {
 	clean();
 	if(m_pLocation && m_uSize){
@@ -26,7 +26,7 @@ Payload::~Payload()
 	}	
 }
 
-//void Payload::clean(){
+//void SafePointer::clean(){
 //	if(m_uSize && m_pLocation){
 //		printf("\nFreeing %u bytes at %p", m_uSize, m_pLocation);
 //		free(m_pLocation);
@@ -34,21 +34,21 @@ Payload::~Payload()
 //	init();
 //}
 //
-//void Payload::init(){
+//void SafePointer::init(){
 //	m_pLocation = 0;
 //	m_uSize = 0;	
 //}
 
-//PayloadSizeUnit Payload::getSize(){
+//PointerSizeUnit SafePointer::getSize(){
 //	return m_uSize;
 //}
-//void * Payload::getLocation(){
+//void * SafePointer::getLocation(){
 //	return m_pLocation;
 //}
 
 
 
-//int Payload::deepCopy(void * pLocation, PayloadSizeUnit uSize){
+//int SafePointer::deepCopy(void * pLocation, PointerSizeUnit uSize){
 //	clean();
 //	
 //	m_pLocation = malloc(uSize);
@@ -61,7 +61,7 @@ Payload::~Payload()
 //}
 
 //
-//bool Payload::isEqualTo(void * pLocation, PayloadSizeUnit uSize){
+//bool SafePointer::isEqualTo(void * pLocation, PointerSizeUnit uSize){
 //	
 //	//If not of the same size then definitely not equal
 //	if(m_uSize != uSize){
@@ -81,7 +81,7 @@ Payload::~Payload()
 //	return false;
 //}
 
-//bool Payload::operator==(Payload & payload){
+//bool SafePointer::operator==(SafePointer & payload){
 //	
 //	if(this == &payload){
 //		return true;
@@ -89,12 +89,12 @@ Payload::~Payload()
 //	return isEqualTo(payload.m_pLocation, payload.m_uSize);	
 //}
 
-Payload & Payload::operator= (Payload & payload){
+SafePointer & SafePointer::operator= (SafePointer & payload){
 	deepCopy(payload.m_pLocation, payload.m_uSize);
 	return *this;
 }
 
-Payload &  Payload::makeEqualTo (void * pLocation, PayloadSizeUnit uSize){
+SafePointer &  SafePointer::makeEqualTo (void * pLocation, PointerSizeUnit uSize){
 	deepCopy(pLocation,uSize);
 	return *this;
 }
