@@ -3,17 +3,17 @@
 
 #include "IMap.h"
 #include "MapEntryNode.h"
-namespace base{
+namespace datastructures{
 	namespace map{
 
-		class LinkedListMap : public base::map::IMap
+		class LinkedListMap : public datastructures::map::IMap
 		{
 			
 		private:
 					MapEntryNode * m_pEntries;
 					unsigned long m_ulEntriesCount;
 		
-					MapEntryNode * findValue(void * pKey, PayloadSizeUnit ulKeySize);
+					MapEntryNode * findValue(void * pKey, PointerSizeUnit ulKeySize);
 								
 				public:
 					LinkedListMap();
@@ -21,8 +21,8 @@ namespace base{
 		
 		
 					
-					bool LinkedListMap::lookup(void * pKeyData, PayloadSizeUnit ulKeySize, Value & v);					
-					void setAt(void * pKeyData, PayloadSizeUnit ulKeySize, void * pValue, PayloadSizeUnit ulValueSize);
+					bool LinkedListMap::lookup(void * pKeyData, PointerSizeUnit ulKeySize, Value & v);					
+					void setAt(void * pKeyData, PointerSizeUnit ulKeySize, void * pValue, PointerSizeUnit ulValueSize);
 		
 		};
 	}

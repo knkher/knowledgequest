@@ -1,6 +1,6 @@
 #include "MapEntryNode.h"
 
-namespace base
+namespace datastructures
 {
 
 	namespace map

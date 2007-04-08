@@ -1,6 +1,6 @@
 #include "Value.h"
 
-namespace base
+namespace datastructures
 {
 
 namespace map

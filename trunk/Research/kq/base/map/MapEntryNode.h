@@ -4,7 +4,7 @@
 #include "key.h"
 #include "value.h"
 
-namespace base
+namespace datastructures
 {
 
 namespace map

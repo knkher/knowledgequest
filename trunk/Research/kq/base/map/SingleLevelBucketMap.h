@@ -3,7 +3,7 @@
 
 #include "IMap.h"
 
-class SingleLevelBucketMap : public base::map::IMap
+class SingleLevelBucketMap : public datastructures::map::IMap
 {
 public:
 	SingleLevelBucketMap();

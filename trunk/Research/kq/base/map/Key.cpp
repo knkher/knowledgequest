@@ -1,6 +1,6 @@
 #include "Key.h"
 
-namespace base
+namespace datastructures
 {
 
 namespace map
