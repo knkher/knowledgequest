@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?fileVersion 3.1.0?>
+
+<ManagedProjectBuildInfo>
+<project id="kq_datastructures.cdt.managedbuild.target.gnu.cygwin.lib.970290628" name="Static Library (Gnu on Windows)" projectType="cdt.managedbuild.target.gnu.cygwin.lib">
+<configuration artifactExtension="a" artifactName="kq_datastructures" cleanCommand="rm -rf" description="" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="cdt.managedbuild.config.gnu.cygwin.lib.debug.1227715402" name="Debug" parent="cdt.managedbuild.config.gnu.cygwin.lib.debug" postbuildStep="cp *.a .." prebuildStep="">
+<toolChain id="cdt.managedbuild.toolchain.gnu.cygwin.lib.debug.1523235078" name="GCC Tool Chain" superClass="cdt.managedbuild.toolchain.gnu.cygwin.lib.debug">
+<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.lib.debug.1600691789" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.lib.debug">
+<option id="gnu.cpp.compiler.option.include.paths.1617170307" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+<listOptionValue builtIn="false" value="../include/"/>
+</option>
+</tool>
+<tool id="cdt.managedbuild.tool.gnu.c.compiler.cygwin.lib.debug.1128366464" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.cygwin.lib.debug"/>
+<tool id="cdt.managedbuild.tool.gnu.archiver.cygwin.lib.debug.1846968662" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.cygwin.lib.debug"/>
+<tool id="cdt.managedbuild.tool.gnu.assembler.cygwin.lib.debug.2137481064" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.cygwin.lib.debug"/>
+<macros/>
+</toolChain>
+</configuration>
+<configuration artifactExtension="a" artifactName="kq_datastructures" cleanCommand="rm -rf" description="" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="cdt.managedbuild.config.gnu.cygwin.lib.release.868064339" name="Release" parent="cdt.managedbuild.config.gnu.cygwin.lib.release" postbuildStep="cp *.a ../../bin">
+<toolChain id="cdt.managedbuild.toolchain.gnu.cygwin.lib.release.2073805727" name="GCC Tool Chain" superClass="cdt.managedbuild.toolchain.gnu.cygwin.lib.release">
+<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.lib.release.1052523385" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.lib.release">
+<option id="gnu.cpp.compiler.option.include.paths.1588517781" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+<listOptionValue builtIn="false" value="../include/"/>
+</option>
+</tool>
+<tool id="cdt.managedbuild.tool.gnu.c.compiler.cygwin.lib.release.744386866" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.cygwin.lib.release"/>
+<tool id="cdt.managedbuild.tool.gnu.archiver.cygwin.lib.release.1678073644" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.cygwin.lib.release"/>
+<tool id="cdt.managedbuild.tool.gnu.assembler.cygwin.lib.release.805822346" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.cygwin.lib.release"/>
+<macros/>
+</toolChain>
+</configuration>
+<macros/>
+</project>
+</ManagedProjectBuildInfo>
