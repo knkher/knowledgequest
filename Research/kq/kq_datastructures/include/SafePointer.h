@@ -12,20 +12,20 @@ namespace datastructures{
 		void * m_pLocation;		
 		unsigned long m_uSize;
 
-		inline int _replaceWith(const void * pLocation, unsigned long uSize);
+		int _replaceWith(const void * pLocation, unsigned long uSize);
 		
 	public:	
 		SafePointer();
 		SafePointer(SafePointer & payload);
-		virtual ~SafePointer();		
-		void clean();		
+		virtual ~SafePointer();
+		void clean();
 		void init();
 		
 		unsigned long getSize();
 		void * getUnsafeCopy();
 		const void * revealLocation();
 				
-		void makeEqualTo(const void * pLocation, unsigned long uSize);		 
+		void makeEqualTo(const void * pLocation, unsigned long uSize);
 		void SafePointer::makeEqualTo(const SafePointer & spSource);
 		
 		bool isEqualTo(const void * pLocation, unsigned long uSize);

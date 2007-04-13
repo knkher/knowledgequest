@@ -14,7 +14,7 @@ namespace datastructures{
 					MapEntryNode * m_pEntries;
 					unsigned long m_ulEntriesCount;
 		
-					inline MapEntryNode * findValue(const void * pKey, unsigned long ulKeySize);
+					MapEntryNode * findValue(const void * pKey, unsigned long ulKeySize);
 								
 				public:
 					LinkedListMap();
