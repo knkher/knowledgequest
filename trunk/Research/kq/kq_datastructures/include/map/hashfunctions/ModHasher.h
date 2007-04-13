@@ -21,8 +21,8 @@ class ModHash:public IHashFunction{
 	public:
 		ModHash(unsigned long ulRange = 256);
 		~ModHash();
-		inline virtual unsigned long getRange();
-		inline virtual unsigned long hash(const void * pData, unsigned long ulDataSize);
+		virtual unsigned long getRange();
+		virtual unsigned long hash(const void * pData, unsigned long ulDataSize);
 
 };
 

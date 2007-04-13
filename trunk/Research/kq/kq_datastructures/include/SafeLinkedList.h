@@ -16,6 +16,11 @@ namespace kq{
 			SafeLinkedList();
 			~SafeLinkedList();
 
+			SafeLinkedListNode * getLeftmostNode();
+			SafeLinkedListNode * getRightmostNode();
+
+			unsigned long getLength();
+
 		};
 	};
 }

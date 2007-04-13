@@ -25,14 +25,14 @@ SafePointer::~SafePointer()
 	clean();	
 }
 
-inline void SafePointer::init(){
+void SafePointer::init(){
 	m_pLocation = 0;
 	m_uSize = 0;	
 }
 
 
 
-inline void SafePointer::clean(){
+void SafePointer::clean(){
 	if(m_uSize && m_pLocation){
 		//printf("\nSafePointer::clean()::Freeing %u bytes at %p", m_uSize, m_pLocation);
 		free(m_pLocation);
@@ -43,7 +43,7 @@ inline void SafePointer::clean(){
 
 
 
-inline int SafePointer::_replaceWith(const void * pLocation, unsigned long uSize){
+int SafePointer::_replaceWith(const void * pLocation, unsigned long uSize){
 	clean();
 
 	m_pLocation = malloc(uSize);

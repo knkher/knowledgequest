@@ -9,8 +9,8 @@ namespace datastructures{
 		class IMap
 		{
 		public:
-			inline virtual const Value * lookup(const void * pKeyData, unsigned long ulKeySize) = 0;					
-			inline virtual void setAt(const void * pKeyData, unsigned long ulKeySize, const void * pValue, unsigned long ulValueSize) = 0;
+			virtual const Value * lookup(const void * pKeyData, unsigned long ulKeySize) = 0;					
+			virtual void setAt(const void * pKeyData, unsigned long ulKeySize, const void * pValue, unsigned long ulValueSize) = 0;
 			virtual ~IMap();
 		};
 	}

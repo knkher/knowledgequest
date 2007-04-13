@@ -29,3 +29,22 @@ void SafeLinkedList::clean(){
 	}
 	m_pStart->clean();
 }
+
+
+SafeLinkedListNode * SafeLinkedList::getLeftmostNode(){
+	return m_pStart->getRigthNode();
+}
+SafeLinkedListNode * SafeLinkedList::getRightmostNode(){
+	return m_pStart->getLeftNode();
+}
+
+unsigned long SafeLinkedList::getLength(){	
+	SafeLinkedListNode * pNextNode = m_pStart->getRigthNode();
+	unsigned long ulLength = 0;
+	while(pNextNode){
+		ulLength++;
+		pNextNode = pNextNode->getRigthNode();
+	}
+
+	return ulLength;
+}
