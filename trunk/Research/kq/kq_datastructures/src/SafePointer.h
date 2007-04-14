@@ -23,7 +23,7 @@ namespace datastructures{
 		
 		unsigned long getSize();
 		void * getUnsafeCopy();
-		const void * revealLocation();
+		void * revealLocation();
 				
 		void makeEqualTo(const void * pLocation, unsigned long uSize);
 		void SafePointer::makeEqualTo(const SafePointer & spSource);

@@ -153,7 +153,23 @@
 			Name="src"
 			>
 			<File
-				RelativePath=".\include\dataTypes.h"
+				RelativePath=".\src\dataTypes.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\ITransportable.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\ITransportable.h"
+				>
+			</File>
+			<File
+				RelativePath=".\src\Payload.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\src\Payload.h"
 				>
 			</File>
 			<File
@@ -161,7 +177,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\include\SafeLinkedList.h"
+				RelativePath=".\src\SafeLinkedList.h"
 				>
 			</File>
 			<File
@@ -169,7 +185,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\include\SafeLinkedListNode.h"
+				RelativePath=".\src\SafeLinkedListNode.h"
 				>
 			</File>
 			<File
@@ -177,7 +193,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\include\SafePointer.h"
+				RelativePath=".\src\SafePointer.h"
 				>
 			</File>
 			<Filter
@@ -188,7 +204,7 @@
 					>
 				</File>
 				<File
-					RelativePath=".\include\map\IMap.h"
+					RelativePath=".\src\map\IMap.h"
 					>
 				</File>
 				<File
@@ -196,7 +212,7 @@
 					>
 				</File>
 				<File
-					RelativePath=".\include\map\Key.h"
+					RelativePath=".\src\map\Key.h"
 					>
 				</File>
 				<File
@@ -204,7 +220,7 @@
 					>
 				</File>
 				<File
-					RelativePath=".\include\map\LinkedListMap.h"
+					RelativePath=".\src\map\LinkedListMap.h"
 					>
 				</File>
 				<File
@@ -212,7 +228,7 @@
 					>
 				</File>
 				<File
-					RelativePath=".\include\map\MapEntryNode.h"
+					RelativePath=".\src\map\MapEntryNode.h"
 					>
 				</File>
 				<File
@@ -220,7 +236,7 @@
 					>
 				</File>
 				<File
-					RelativePath=".\include\map\SingleLevelBucketMap.h"
+					RelativePath=".\src\map\SingleLevelBucketMap.h"
 					>
 				</File>
 				<File
@@ -228,7 +244,7 @@
 					>
 				</File>
 				<File
-					RelativePath=".\include\map\Value.h"
+					RelativePath=".\src\map\Value.h"
 					>
 				</File>
 				<Filter
@@ -239,7 +255,7 @@
 						>
 					</File>
 					<File
-						RelativePath=".\include\map\hashfunctions\IHashFucntion.h"
+						RelativePath=".\src\map\hashfunctions\IHashFucntion.h"
 						>
 					</File>
 					<File
@@ -247,7 +263,7 @@
 						>
 					</File>
 					<File
-						RelativePath=".\include\map\hashfunctions\ModHasher.h"
+						RelativePath=".\src\map\hashfunctions\ModHasher.h"
 						>
 					</File>
 				</Filter>
