@@ -73,8 +73,8 @@ unsigned long SafePointer::getSize(){
 }
 
 
-const void * SafePointer::revealLocation(){
-	return (const void *)m_pLocation;
+void * SafePointer::revealLocation(){
+	return m_pLocation;
 }
 
 

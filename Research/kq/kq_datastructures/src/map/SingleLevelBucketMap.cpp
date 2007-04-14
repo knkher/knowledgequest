@@ -1,4 +1,4 @@
-#include "map/SingleLevelBucketMap.h"
+#include "SingleLevelBucketMap.h"
 
 using namespace kq::datastructures;
 using namespace kq::datastructures::map;

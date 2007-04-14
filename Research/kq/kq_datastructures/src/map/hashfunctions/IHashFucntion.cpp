@@ -1,4 +1,4 @@
-#include "map/hashfunctions/IHashFucntion.h"
+#include "IHashFucntion.h"
 
 
 using namespace kq::datastructures::map::hashfunctions;

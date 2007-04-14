@@ -1,4 +1,4 @@
-#include "map/LinkedListMap.h"
+#include "LinkedListMap.h"
 
 using namespace kq::datastructures;
 using namespace kq::datastructures::map;

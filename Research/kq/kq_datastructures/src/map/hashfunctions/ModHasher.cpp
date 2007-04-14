@@ -1,4 +1,4 @@
-#include "map/hashfunctions/ModHasher.h"
+#include "ModHasher.h"
 
 #include "stdio.h"
 

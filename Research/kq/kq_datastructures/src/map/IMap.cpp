@@ -1,4 +1,4 @@
-#include "map/IMap.h"
+#include "IMap.h"
 
 namespace kq
 {
