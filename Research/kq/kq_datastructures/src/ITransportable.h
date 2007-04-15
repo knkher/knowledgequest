@@ -1,3 +1,7 @@
+#ifndef KQ_DS_ITRANSPOTABLE_H_
+#define KQ_DS_ITRANSPOTABLE_H_
+
+
 #include "Payload.h"
 
 namespace kq{
@@ -10,3 +14,5 @@ namespace kq{
 		};
 	}
 }
+
+#endif

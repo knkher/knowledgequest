@@ -19,6 +19,10 @@ namespace kq{
 			SafeLinkedListNode * getLeftmostNode();
 			SafeLinkedListNode * getRightmostNode();
 
+			SafeLinkedListNode * getNodeAt(unsigned int iPos);
+			void _addNodeAt(SafeLinkedListNode * pNode, unsigned int iPos);
+
+
 			unsigned long getLength();
 
 		};
