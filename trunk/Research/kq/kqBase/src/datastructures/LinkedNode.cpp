@@ -20,6 +20,7 @@ unsigned long LinkedNode::getLinkCount(){
 
 void LinkedNode::init(){
 	m_pLinks = 0;
+	clean();
 	m_pLinks = new LinkedNode *[m_nLinks];
 	if(m_pLinks){
 		unsigned long iLink;
@@ -29,11 +30,13 @@ void LinkedNode::init(){
 	}else{
 		m_nLinks = 0;
 	}
+
+	
 }
 
 
 void LinkedNode::clean(){
-	delete[] m_pLinks;
+	delete[] m_pLinks;	
 }
 
 LinkedNode * LinkedNode::getNodeOnLink(unsigned long iLink, unsigned long iOffset){
@@ -88,8 +91,29 @@ void LinkedNode::setNodeOnLink(unsigned long iLink, LinkedNode * pNode){
 	if(iLink < m_nLinks){
 		m_pLinks[iLink] = pNode;
 	}
-}
+} 
 
+
+LinkedNode * LinkedNode::traverse(NodeTraversalPattern ntp){
+	LinkedNode * pRet = this;
+	LinkedNode * pNew = this;
+	if(ntp.m_nSteps){
+		unsigned long iStep = 0;
+		NodeTraversalStep * pStep = ntp.m_ntsSteps;
+		while(iStep < ntp.m_nSteps){
+			pRet = pRet->getNodeOnLink(pStep->nLink, pStep->nSteps);
+			pStep++;
+			iStep++;
+		};
+		if(iStep != ntp.m_nSteps){
+			pRet = 0;
+		}
+		
+	}
+
+	return pRet;
+
+}
 
 
 
