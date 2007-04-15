@@ -148,15 +148,15 @@
 				Name="datastructures"
 				>
 				<File
+					RelativePath=".\src\datastructures\DataContainer.h"
+					>
+				</File>
+				<File
 					RelativePath=".\src\datastructures\IData.cpp"
 					>
 				</File>
 				<File
 					RelativePath=".\src\datastructures\IData.h"
-					>
-				</File>
-				<File
-					RelativePath=".\src\datastructures\IDataContainer.h"
 					>
 				</File>
 				<File
@@ -191,6 +191,14 @@
 		</File>
 		<File
 			RelativePath=".\src\datastructures\DataFactory.h"
+			>
+		</File>
+		<File
+			RelativePath=".\src\datastructures\NodeTraversalPattern.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\src\datastructures\NodeTraversalPattern.h"
 			>
 		</File>
 	</Files>
