@@ -1,9 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kq_datastructures", "kq_datastructures\kq_datastructures.vcproj", "{6EB6BF2F-F75E-4766-8FAD-08072FD46888}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kqtester", "kqtester\kqtester.vcproj", "{46C41F22-7C02-4779-A93D-2C07E8676BF7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{582E244B-6BDE-4D15-807E-72AB05436BC1} = {582E244B-6BDE-4D15-807E-72AB05436BC1}
+	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kq_transport", "kq_transport\kq_transport.vcproj", "{965532BC-2C6F-4B23-AB48-19007E28CCC0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kqBase", "kqBase\kqBase.vcproj", "{582E244B-6BDE-4D15-807E-72AB05436BC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,14 +14,14 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6EB6BF2F-F75E-4766-8FAD-08072FD46888}.Debug|Win32.ActiveCfg = Debug|Win32
-		{6EB6BF2F-F75E-4766-8FAD-08072FD46888}.Debug|Win32.Build.0 = Debug|Win32
-		{6EB6BF2F-F75E-4766-8FAD-08072FD46888}.Release|Win32.ActiveCfg = Release|Win32
-		{6EB6BF2F-F75E-4766-8FAD-08072FD46888}.Release|Win32.Build.0 = Release|Win32
-		{965532BC-2C6F-4B23-AB48-19007E28CCC0}.Debug|Win32.ActiveCfg = Debug|Win32
-		{965532BC-2C6F-4B23-AB48-19007E28CCC0}.Debug|Win32.Build.0 = Debug|Win32
-		{965532BC-2C6F-4B23-AB48-19007E28CCC0}.Release|Win32.ActiveCfg = Release|Win32
-		{965532BC-2C6F-4B23-AB48-19007E28CCC0}.Release|Win32.Build.0 = Release|Win32
+		{46C41F22-7C02-4779-A93D-2C07E8676BF7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{46C41F22-7C02-4779-A93D-2C07E8676BF7}.Debug|Win32.Build.0 = Debug|Win32
+		{46C41F22-7C02-4779-A93D-2C07E8676BF7}.Release|Win32.ActiveCfg = Release|Win32
+		{46C41F22-7C02-4779-A93D-2C07E8676BF7}.Release|Win32.Build.0 = Release|Win32
+		{582E244B-6BDE-4D15-807E-72AB05436BC1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{582E244B-6BDE-4D15-807E-72AB05436BC1}.Debug|Win32.Build.0 = Debug|Win32
+		{582E244B-6BDE-4D15-807E-72AB05436BC1}.Release|Win32.ActiveCfg = Release|Win32
+		{582E244B-6BDE-4D15-807E-72AB05436BC1}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

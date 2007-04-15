@@ -14,10 +14,10 @@ SafePointer::SafePointer()
 	init();
 }
 
-SafePointer::SafePointer(SafePointer & payload)
+SafePointer::SafePointer(SafePointer & spOther)
 {
 	init();
-	makeEqualTo(payload.m_pLocation, payload.m_uSize);		
+	makeEqualTo(spOther.m_pLocation, spOther.m_uSize);		
 }
 
 SafePointer::~SafePointer()
@@ -57,7 +57,7 @@ int SafePointer::_replaceWith(const void * pLocation, unsigned long uSize){
 }
 
 
-void * SafePointer::getUnsafeCopy(){
+void * SafePointer::getUnsafeCopy() const{
 	void * pRet = 0;
 	pRet = malloc(m_uSize);
 	if(pRet){
@@ -68,12 +68,12 @@ void * SafePointer::getUnsafeCopy(){
 
 
 
-unsigned long SafePointer::getSize(){
+unsigned long SafePointer::getSize() const{
 	return m_uSize;
 }
 
 
-void * SafePointer::revealLocation(){
+void * SafePointer::revealLocation() const{
 	return m_pLocation;
 }
 
@@ -90,7 +90,7 @@ void SafePointer::operator =(const SafePointer & spSource){
 	makeEqualTo(spSource);
 }
 
-bool SafePointer::isEqualTo(const void * pLocation, unsigned long uSize){
+bool SafePointer::isEqualTo(const void * pLocation, unsigned long uSize) const{
 	//If not of the same size then definitely not equal
 	if(m_uSize != uSize){
 		return false;
@@ -109,14 +109,14 @@ bool SafePointer::isEqualTo(const void * pLocation, unsigned long uSize){
 	return false;
 }
 
-bool SafePointer::isEqualTo(const SafePointer & spOther){
+bool SafePointer::isEqualTo(const SafePointer & spOther) const{
 	if(&spOther == this){
 		return true;
 	}
 	return isEqualTo(spOther.m_pLocation, spOther.m_uSize);
 }
 
-void SafePointer::operator ==(const SafePointer & spOther){
+void SafePointer::operator ==(const SafePointer & spOther) const{
 	isEqualTo(spOther);
 }
 

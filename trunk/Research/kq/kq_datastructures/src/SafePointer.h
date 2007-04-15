@@ -1,17 +1,16 @@
-#ifndef PAYLOAD_H_
-#define PAYLOAD_H_
+#ifndef SAFEPOINTER_H_
+#define SAFEPOINTER_H_
 
 #include "dataTypes.h"
+#include "Pointer.h"
 
 namespace kq{
 namespace datastructures{
 	
-	class SafePointer
+	class SafePointer:protected Pointer
 	{
 	private:
-		void * m_pLocation;		
-		unsigned long m_uSize;
-
+		
 		int _replaceWith(const void * pLocation, unsigned long uSize);
 		
 	public:	
@@ -21,19 +20,19 @@ namespace datastructures{
 		void clean();
 		void init();
 		
-		unsigned long getSize();
-		void * getUnsafeCopy();
-		void * revealLocation();
+		unsigned long getSize() const;
+		void * getUnsafeCopy() const;
+		void * revealLocation() const;
 				
 		void makeEqualTo(const void * pLocation, unsigned long uSize);
 		void SafePointer::makeEqualTo(const SafePointer & spSource);
 		
-		bool isEqualTo(const void * pLocation, unsigned long uSize);
-		bool isEqualTo(const SafePointer & spOther);
+		bool isEqualTo(const void * pLocation, unsigned long uSize) const;
+		bool isEqualTo(const SafePointer & spOther) const;
 
 
 		void SafePointer::operator =(const SafePointer & spSource);
-		void SafePointer::operator ==(const SafePointer & spOther);
+		void SafePointer::operator ==(const SafePointer & spOther) const;
 		
 	};
 	

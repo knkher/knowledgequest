@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8.00"
-	Name="kq_datastructures"
-	ProjectGUID="{6EB6BF2F-F75E-4766-8FAD-08072FD46888}"
-	RootNamespace="kq_datastructures"
+	Name="kqBase"
+	ProjectGUID="{582E244B-6BDE-4D15-807E-72AB05436BC1}"
+	RootNamespace="kqBase"
 	Keyword="Win32Proj"
 	>
 	<Platforms>
@@ -17,7 +17,7 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="$(SolutionDir)\bin\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)bin\$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
 			CharacterSet="1"
@@ -40,15 +40,12 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="include"
 				PreprocessorDefinitions="WIN32;_DEBUG;_LIB"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
-				EnableEnhancedInstructionSet="2"
 				UsePrecompiledHeader="0"
-				WarningLevel="4"
-				WarnAsError="true"
+				WarningLevel="3"
 				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="4"
 			/>
@@ -82,7 +79,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="$(SolutionDir)\bin"
+			OutputDirectory="$(SolutionDir)bin"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
 			CharacterSet="1"
@@ -105,16 +102,10 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				InlineFunctionExpansion="2"
-				EnableIntrinsicFunctions="true"
-				FavorSizeOrSpeed="1"
-				AdditionalIncludeDirectories="include"
 				PreprocessorDefinitions="WIN32;NDEBUG;_LIB"
-				RuntimeLibrary="0"
-				EnableEnhancedInstructionSet="2"
+				RuntimeLibrary="2"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
-				WarnAsError="true"
 				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="3"
 			/>
@@ -153,143 +144,53 @@
 		<Filter
 			Name="src"
 			>
-			<File
-				RelativePath=".\src\dataTypes.h"
-				>
-			</File>
-			<File
-				RelativePath=".\src\ITransportable.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\src\ITransportable.h"
-				>
-			</File>
-			<File
-				RelativePath=".\src\Payload.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\src\Payload.h"
-				>
-			</File>
-			<File
-				RelativePath=".\src\SafeLinkedList.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\src\SafeLinkedList.h"
-				>
-			</File>
-			<File
-				RelativePath=".\src\SafeLinkedListNode.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\src\SafeLinkedListNode.h"
-				>
-			</File>
-			<File
-				RelativePath=".\src\SafePointer.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\src\SafePointer.h"
-				>
-			</File>
-			<File
-				RelativePath=".\src\TransportableLinkedList.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\src\TransportableLinkedList.h"
-				>
-			</File>
 			<Filter
-				Name="map"
+				Name="datastructures"
 				>
 				<File
-					RelativePath=".\src\map\IMap.cpp"
+					RelativePath=".\src\datastructures\IData.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\src\map\IMap.h"
+					RelativePath=".\src\datastructures\IData.h"
 					>
 				</File>
 				<File
-					RelativePath=".\src\map\Key.cpp"
+					RelativePath=".\src\datastructures\IDataContainer.h"
 					>
 				</File>
 				<File
-					RelativePath=".\src\map\Key.h"
+					RelativePath=".\src\datastructures\LinkedNode.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\src\map\LinkedListMap.cpp"
+					RelativePath=".\src\datastructures\LinkedNode.h"
 					>
 				</File>
 				<File
-					RelativePath=".\src\map\LinkedListMap.h"
+					RelativePath=".\src\datastructures\PseudoData.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\src\map\MapEntryNode.cpp"
+					RelativePath=".\src\datastructures\PseudoData.h"
 					>
 				</File>
 				<File
-					RelativePath=".\src\map\MapEntryNode.h"
+					RelativePath=".\src\datastructures\TreeNode.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\src\map\SingleLevelBucketMap.cpp"
+					RelativePath=".\src\datastructures\TreeNode.h"
 					>
 				</File>
-				<File
-					RelativePath=".\src\map\SingleLevelBucketMap.h"
-					>
-				</File>
-				<File
-					RelativePath=".\src\map\Value.cpp"
-					>
-				</File>
-				<File
-					RelativePath=".\src\map\Value.h"
-					>
-				</File>
-				<Filter
-					Name="hashfunctions"
-					>
-					<File
-						RelativePath=".\src\map\hashfunctions\IHashFucntion.cpp"
-						>
-					</File>
-					<File
-						RelativePath=".\src\map\hashfunctions\IHashFucntion.h"
-						>
-					</File>
-					<File
-						RelativePath=".\src\map\hashfunctions\ModHasher.cpp"
-						>
-					</File>
-					<File
-						RelativePath=".\src\map\hashfunctions\ModHasher.h"
-						>
-					</File>
-				</Filter>
 			</Filter>
 		</Filter>
-		<Filter
-			Name="Resource Files"
-			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
-			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
-			>
-		</Filter>
 		<File
-			RelativePath=".\src\Pointer.cpp"
+			RelativePath=".\src\datastructures\DataFactory.cpp"
 			>
 		</File>
 		<File
-			RelativePath=".\src\Pointer.h"
+			RelativePath=".\src\datastructures\DataFactory.h"
 			>
 		</File>
 	</Files>

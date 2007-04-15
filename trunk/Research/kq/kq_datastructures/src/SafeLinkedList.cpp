@@ -39,12 +39,31 @@ SafeLinkedListNode * SafeLinkedList::getRightmostNode(){
 }
 
 unsigned long SafeLinkedList::getLength(){	
-	SafeLinkedListNode * pNextNode = m_pStart->getRigthNode();
-	unsigned long ulLength = 0;
-	while(pNextNode){
-		ulLength++;
-		pNextNode = pNextNode->getRigthNode();
+	return m_ulSize;
+}
+
+
+SafeLinkedListNode * SafeLinkedList::getNodeAt(unsigned int iPos){
+	if(m_ulSize >= iPos || iPos < 0){
+		return 0;
+	}	
+	//See if node is reachable faster from the other side of the linked list
+	if(iPos > m_ulSize/2){
+		return (m_pStart - iPos);
+	}
+	return (m_pStart + iPos);
+}
+void SafeLinkedList::addNodeAt(SafeLinkedListNode * pNode, unsigned int iPos){
+	SafeLinkedListNode * pNodeToInsertAfter = 0;
+	if(iPos == 0){
+		pNodeToInsertAfter = m_pStart;
+	}else{
+		pNodeToInsertAfter = getNodeAt(iPos - 1);
 	}
 
-	return ulLength;
+	if(pNodeToInsertAfter){
+		pNode->insertAfter(pNodeToInsertAfter);
+	}else{
+
+	}
 }
