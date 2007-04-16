@@ -152,6 +152,14 @@
 					>
 				</File>
 				<File
+					RelativePath=".\src\datastructures\DataFactory.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\src\datastructures\DataFactory.h"
+					>
+				</File>
+				<File
 					RelativePath=".\src\datastructures\IData.cpp"
 					>
 				</File>
@@ -165,6 +173,14 @@
 				</File>
 				<File
 					RelativePath=".\src\datastructures\LinkedNode.h"
+					>
+				</File>
+				<File
+					RelativePath=".\src\datastructures\NodeTraversalPattern.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\src\datastructures\NodeTraversalPattern.h"
 					>
 				</File>
 				<File
@@ -185,22 +201,6 @@
 				</File>
 			</Filter>
 		</Filter>
-		<File
-			RelativePath=".\src\datastructures\DataFactory.cpp"
-			>
-		</File>
-		<File
-			RelativePath=".\src\datastructures\DataFactory.h"
-			>
-		</File>
-		<File
-			RelativePath=".\src\datastructures\NodeTraversalPattern.cpp"
-			>
-		</File>
-		<File
-			RelativePath=".\src\datastructures\NodeTraversalPattern.h"
-			>
-		</File>
 	</Files>
 	<Globals>
 	</Globals>
