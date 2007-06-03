@@ -1,6 +1,7 @@
 #include "DataFactory.h"
 
 #include "PseudoData.h"
+#include "RealData.h"
 
 
 using namespace kq::base::datastructures;
@@ -45,4 +46,30 @@ IData * DataFactory::createPseudoData(void * pDataLocation, unsigned long uDataS
 		pRet = pData;
 	}
 	return pRet;
+}
+
+IData * DataFactory::createRealData(unsigned long uDataSize){
+	RealData * pData = new RealData(uDataSize);
+	if(!pData){
+		return 0;
+	}	
+	IData * pRet = dynamic_cast<IData *>(pData);
+	if(!pRet){
+		_asm int 3;
+		pRet = pData;
+	}
+	return pRet;
+}
+
+IData * DataFactory::createRealData(void *pDataLocation, unsigned long uDataSize){
+	IData * pData = createRealData(uDataSize);
+	if(!pData){
+		return 0;
+	}
+
+	if(pData->transfer(pDataLocation, uDataSize) != uDataSize){		
+		destroyData(pData);
+		pData = 0;
+	}
+	return pData;
 }

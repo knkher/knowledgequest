@@ -7,7 +7,7 @@
 namespace kq{
 	namespace base{
 		namespace datastructures{
-			class TreeNode:public DataContainer, protected LinkedNode{
+			class TreeNode:/*public DataContainer,*/ protected LinkedNode{
 			protected:				
 				unsigned long m_nMaxChildren;
 				unsigned long m_nChildren;

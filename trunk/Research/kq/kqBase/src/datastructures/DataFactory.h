@@ -29,6 +29,10 @@ namespace kq{
 				//Will get a thin (light weight) IData, basically just a pointer
 				IData * createPseudoData(void * pDataLocation, unsigned long uDataSize);
 
+				//Will get a managed (heavyt weight) IData, basically just a area in memory
+				IData * createRealData(void * pDataLocation, unsigned long uDataSize);
+				IData * createRealData(unsigned long uDataSize);
+
 			};
 
 		}//DS

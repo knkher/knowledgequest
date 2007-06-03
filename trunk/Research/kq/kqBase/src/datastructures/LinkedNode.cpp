@@ -3,7 +3,7 @@
 using namespace kq::base::datastructures;
 
 LinkedNode::LinkedNode(unsigned long nLinks)
-{
+{	
 	m_nLinks = nLinks;
 	init();
 }
@@ -29,9 +29,7 @@ void LinkedNode::init(){
 		}	
 	}else{
 		m_nLinks = 0;
-	}
-
-	
+	}	
 }
 
 
@@ -39,15 +37,15 @@ void LinkedNode::clean(){
 	delete[] m_pLinks;	
 }
 
-LinkedNode * LinkedNode::getNodeOnLink(unsigned long iLink, unsigned long iOffset){
+LinkedNode * LinkedNode::getNodeOnLink(unsigned long iLink, unsigned long nTimes){
 	LinkedNode * pNode = this;
-	while(iOffset && pNode && (iLink < pNode->m_nLinks)){
+	while(nTimes && pNode && (iLink < pNode->m_nLinks)){
 
 		pNode = *(pNode->m_pLinks + iLink);
-		iOffset--;
+		nTimes--;
 	}
 
-	if(iOffset == 0){
+	if(nTimes == 0){
 		return pNode;
 	}
 
