@@ -124,3 +124,7 @@ unsigned long PseudoData::transfer(
 	memcpy(pDest, pSrc, ulBytes);
 	return ulBytes;
 }
+
+void * PseudoData::getLocation(){
+	return m_pLocation;
+}

@@ -1,12 +1,13 @@
-#ifndef KQ_DS_PSEUDODATA
-#define KQ_DS_PSEUDODATA
+#ifndef KQ_DS_REALDATA
+#define KQ_DS_REALDATA
 
 #include "IData.h"
+#include "PseudoData.h"
 
 namespace kq{
 	namespace base{
 		namespace datastructures{
-			class PseudoData:public IData{
+			class RealData:public IData{
 
 			/////////////////////////////
 			///////IData Impl////////////
@@ -34,15 +35,11 @@ namespace kq{
 
 		
 				unsigned long getDataSize();
-
-
+		
 			protected:
-				void * m_pLocation;
-				unsigned long m_ulSize;
-			public:
-				void pointTo(void * pLocation, unsigned long ulSize);
-				void * getLocation();
-			
+				PseudoData m_PseudoData;
+			public:				
+				RealData(unsigned long ulSize);
 			};
 		};
 	};

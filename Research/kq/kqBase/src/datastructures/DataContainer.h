@@ -7,8 +7,9 @@ namespace kq{
 	namespace base{
 		namespace datastructures{
 			class DataContainer{
-			public:
+			private:
 				IData * m_pData;
+			
 			};
 		}
 	}
